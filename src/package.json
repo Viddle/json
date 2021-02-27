@@ -1,0 +1,35 @@
+{
+  "name": "@viddle/json",
+  "version": "1.0.0",
+  "description": "Simple json database by Viddle.net",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Viddle/json.git"
+  },
+  "keywords": [
+    "json",
+    "db",
+    "database",
+    "storage",
+    "engine",
+    "simple",
+    "node",
+    "viddle",
+    "nodejs"
+  ],
+  "author": "Viddle.net <dev@viddle.net> (https://viddle.net)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Viddle/json/issues"
+  },
+  "homepage": "https://github.com/Viddle/json#readme",
+  "devDependencies": {
+    "fs": "^0.0.1-security",
+    "simple-json-db": "^1.2.3"
+  }
+}
