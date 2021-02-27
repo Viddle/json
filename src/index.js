@@ -14,6 +14,7 @@ class DataBase {
     }
 
     set(key, value, json = true) {
+        key = (key).toString();
         if (json && key.indexOf('.') !== -1) this.storage = Json.expand(this.storage, key, value);
         else this.storage[key] = value;
         this.sync();
