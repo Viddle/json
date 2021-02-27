@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { type } = require('os');
 
 class Json {
 
@@ -19,7 +18,7 @@ class Json {
             throw new Error(`Cannot write file!`);
         }
     }
-
+    
     static stats(path) {
         try {
             return fs.statSync(path);
@@ -71,7 +70,7 @@ class Json {
             throw new Error(`Error while writing to path "${path}": ${err}`);
         }
     }
-    
+
     static expand(object, key, value) {
         var result = object;
         var arr = key.split('.');

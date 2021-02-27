@@ -2,11 +2,11 @@ const Json = require('./utils/Json');
 const fs = require('fs');
 
 class DataBase {
-    constructor(path = "db") {
+    constructor(path = "db", options = { refresh: false }) {
         this.storage = {};
         this.path = `${path}.json`;
         this.stats = {};
-        this.process = 0;
+        this.options = options;
         this.init();
     }
 
@@ -16,7 +16,6 @@ class DataBase {
 
     set(key, value, json = true) {
         key = (key).toString();
-        this.process = 1;
         if (json && key.indexOf('.') !== -1) this.storage = Json.expand(this.storage, key, value);
         else this.storage[key] = value;
         this.sync();
@@ -25,7 +24,6 @@ class DataBase {
     
     delete(key, json = true) {
         var status = true;
-        this.process = 2;
         if (json && key.indexOf(".") !== -1) {
             let keys = key.split('.');
             status = keys.reduce(function(o, k) {
@@ -40,12 +38,11 @@ class DataBase {
     }
 
     get(key, json = true) {
-        if (this.process !== 0) this.refresh()
-        this.process = 0;
+        if (this.options.refresh) this.refresh();
         if (json && key.indexOf(".") > -1) return key.split('.').reduce(function(o, k) { return o[k] }, this.storage);
         return this.storage[key] || undefined;
     }
-
+    
     all() {
         return this.storage;
     }

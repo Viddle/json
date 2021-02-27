@@ -1,6 +1,6 @@
 {
   "name": "@viddle/json",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple json database by Viddle.net",
   "main": "index.js",
   "types": "index.d.ts",

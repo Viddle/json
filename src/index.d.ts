@@ -1,5 +1,5 @@
 declare class DataBase {
-    constructor(path: string);
+    constructor(path: string, options?: { refresh?: boolean });
     
     set(key: string, value: object | string | number, dotNotation: boolean) : void;
     get(key: string, dotNotation: boolean) : object | undefined;
