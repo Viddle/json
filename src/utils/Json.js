@@ -71,7 +71,7 @@ class Json {
             throw new Error(`Error while writing to path "${path}": ${err}`);
         }
     }
-
+    
     static expand(object, key, value) {
         var result = object;
         var arr = key.split('.');
